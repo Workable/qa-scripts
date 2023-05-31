@@ -1,0 +1,7 @@
+alias staw='workable && ./script/startw-me start'
+alias stow='workable && ./script/startw-me stop'
+alias dbd='bundle exec rake db:dump'
+alias dbr='bundle exec rake db:restore'
+alias dbs='bundle exec rake qa:fixtures_load["syndication",t,t]'
+alias dbs_dev='bundle exec rake db:drop db:create db:migrate db:fixtures:load'
+alias wait-for-workable='wait-for-it localhost:3001 -t 30 && wait-for-it lvh.me:3443 -t 60'

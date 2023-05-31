@@ -1,0 +1,1 @@
+alias qa_tests_run='qa_tests && ./gradlew clean test -Pmode=local-me'
