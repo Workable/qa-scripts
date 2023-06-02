@@ -2,8 +2,22 @@ function edit_bash(){
  vi ~/.bash_profile
 }
 
+#Example:
+#curl_withbase64 foo https://workable.jfrog.io/workable/binary-local/base-commander/base-commander-linux-amd64
+#  curl -i \
+#      -H 'Accept:application/json' \
+#      -H 'Authorization:Basic foo' \
+#      https://workable.jfrog.io/workable/binary-local/base-commander/base-commander-linux-amd64
+
+function curl_withbase64(){
+    curl -i \
+        -H 'Accept:application/json' \
+        -H "Authorization:Basic $1" \
+        $2
+}
+
 function find_large_files(){
- du -h -d 1 / 2>/dev/null | grep '[0-9]G\>' | sort -hr
+ du -h -d 1 | grep '[0-9]G\>' | sort -hr
 }
 
 function disk_utilization(){
